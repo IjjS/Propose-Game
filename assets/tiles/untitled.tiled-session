@@ -1,0 +1,86 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "landing.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "Dress.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Incheon.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Japan.tsx": {
+            "scaleInDock": 0.5,
+            "scaleInEditor": 1
+        },
+        "Jeju.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Jeonju.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "MongJoongHeon.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "MyeongDong.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "frames.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "landing.tmx": {
+            "scale": 3,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 387.66666666666663,
+                "y": 275.3333333333333
+            }
+        }
+    },
+    "last.imagePath": "/Users/song-injae/FlutterProject/pink_adventure/assets/images/Background",
+    "map.height": 24,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 56,
+    "openFiles": [
+        "frames.tsx",
+        "Japan.tsx",
+        "Incheon.tsx",
+        "Jeju.tsx",
+        "MongJoongHeon.tsx",
+        "MyeongDong.tsx",
+        "Jeonju.tsx",
+        "Dress.tsx",
+        "landing.tmx"
+    ],
+    "project": "untitled.tiled-project",
+    "recentFiles": [
+        "frames.tsx",
+        "Japan.tsx",
+        "Incheon.tsx",
+        "Jeju.tsx",
+        "MongJoongHeon.tsx",
+        "MyeongDong.tsx",
+        "Jeonju.tsx",
+        "Dress.tsx",
+        "landing.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
