@@ -1,6 +1,6 @@
-# princess_advanture
+# pink_advanture
 
-A new Flutter project.
+This is a simple mobile game app for my proposal. Please wish me the best luck!
 
 ## Getting Started
 
