@@ -71,4 +71,10 @@ class PinkAdventure extends FlameGame with DragCallbacks {
     }
   }
 
+  void nextLevel(String levelName) {
+    final level = Level(player: player, name: levelName);
+
+    cam.world = level;
+  }
+
 }
