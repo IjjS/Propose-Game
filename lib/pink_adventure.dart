@@ -11,33 +11,22 @@ import 'package:princess_advanture/components/jump_button.dart';
 
 class PinkAdventure extends FlameGame with DragCallbacks {
 
-  late final CameraComponent cam;
-  late JoystickComponent joystick;
+  late CameraComponent cam;
+  late final JoystickComponent joystick;
+  late final JumpButton jumpButton;
   final player = Player();
+
+  PinkAdventure() {
+    pauseWhenBackgrounded = false;
+  }
 
   @override
   FutureOr<void> onLoad() async {
+
+    overlays.add('Landing');
     await images.loadAllImages();
 
     final level = Level(player: player, name: 'landing');
-
-    cam = CameraComponent.withFixedResolution(world: level, width: 892, height: 392);
-    cam.viewfinder.anchor = Anchor.topLeft;
-
-    addAll([level, cam]);
-    addJoystick();
-    addJumpButton();
-    
-    return super.onLoad();
-  }
-
-  @override
-  void update(double dt) {
-    updateJoystick();
-    super.update(dt);
-  }
-
-  void addJoystick() {
     joystick = JoystickComponent(
       knob: SpriteComponent(
         sprite: Sprite(images.fromCache('HUD/Knob.png')),
@@ -47,14 +36,17 @@ class PinkAdventure extends FlameGame with DragCallbacks {
       ),
       margin: const EdgeInsets.only(left: 64, bottom: 32),
     );
+    jumpButton = JumpButton();
 
-    cam.viewport.add(joystick);
+    _loadLevel(level);
+    
+    return super.onLoad();
   }
 
-  void addJumpButton() {
-    final jumpButton = JumpButton();
-
-    cam.viewport.add(jumpButton);
+  @override
+  void update(double dt) {
+    updateJoystick();
+    super.update(dt);
   }
 
   void updateJoystick() {
@@ -72,9 +64,19 @@ class PinkAdventure extends FlameGame with DragCallbacks {
   }
 
   void nextLevel(String levelName) {
+    removeWhere((component) => component is Level);
     final level = Level(player: player, name: levelName);
 
-    cam.world = level;
+    _loadLevel(level);
+  }
+
+  void _loadLevel(Level level) {
+    cam = CameraComponent.withFixedResolution(world: level, width: 892, height: 392);
+    cam.viewfinder.anchor = Anchor.topLeft;
+
+    addAll([level, cam]);
+    cam.viewport.add(joystick);
+    cam.viewport.add(jumpButton);
   }
 
 }
