@@ -9,7 +9,7 @@ import 'package:princess_advanture/player/Player.dart';
 import 'package:princess_advanture/enums/player_direction.dart';
 import 'package:princess_advanture/components/jump_button.dart';
 
-class PinkAdventure extends FlameGame with DragCallbacks {
+class PinkAdventure extends FlameGame with DragCallbacks, HasCollisionDetection {
 
   late CameraComponent cam;
   late final JoystickComponent joystick;
@@ -19,6 +19,10 @@ class PinkAdventure extends FlameGame with DragCallbacks {
   PinkAdventure() {
     pauseWhenBackgrounded = false;
   }
+
+  int number = 0;
+  late int completeNumber;
+  bool completeNumberInitialized = false;
 
   @override
   FutureOr<void> onLoad() async {
@@ -68,6 +72,8 @@ class PinkAdventure extends FlameGame with DragCallbacks {
     final level = Level(player: player, name: levelName);
 
     _loadLevel(level);
+    completeNumber = level.getCompleteNumber();
+    completeNumberInitialized = true;
   }
 
   void _loadLevel(Level level) {
@@ -77,6 +83,14 @@ class PinkAdventure extends FlameGame with DragCallbacks {
     addAll([level, cam]);
     cam.viewport.add(joystick);
     cam.viewport.add(jumpButton);
+  }
+
+  bool isReadyForCheckpoint() {
+    if (!completeNumberInitialized) {
+      return false;
+    }
+
+    return number == completeNumber;
   }
 
 }
