@@ -1,12 +1,13 @@
 import 'dart:async';
 
+import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:princess_advanture/player/facing.dart';
 import 'package:princess_advanture/enums/player_direction.dart';
 import 'package:princess_advanture/enums/player_state.dart';
 import 'package:princess_advanture/pink_adventure.dart';
 
-class Player extends SpriteAnimationGroupComponent with HasGameRef<PinkAdventure> {
+class Player extends SpriteAnimationGroupComponent with HasGameRef<PinkAdventure>, CollisionCallbacks {
 
   Player({ super.position });
 
@@ -27,6 +28,11 @@ class Player extends SpriteAnimationGroupComponent with HasGameRef<PinkAdventure
   @override
   FutureOr<void> onLoad() {
     _loadAllAnimations();
+    add(RectangleHitbox(
+      position: Vector2(10, 4),
+      size: Vector2(14, 28),
+    ));
+
     return super.onLoad();
   }
 
