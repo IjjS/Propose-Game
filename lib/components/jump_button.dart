@@ -12,9 +12,10 @@ class JumpButton extends SpriteComponent with HasGameRef<PinkAdventure>, TapCall
   @override
   FutureOr<void> onLoad() {
     sprite  = Sprite(game.images.fromCache('HUD/Jump.png'));
+    // TODO: iphone button size
     position = Vector2(
-      game.size.x - margin - buttonSize,
-      game.size.y - margin - buttonSize,
+      game.size.x,
+      game.size.y - buttonSize,
     );
 
     return super.onLoad();
