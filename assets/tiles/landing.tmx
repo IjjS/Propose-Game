@@ -30,7 +30,7 @@
 </data>
  </layer>
  <objectgroup id="2" name="Spawn">
-  <object id="5" name="Player" type="Player" x="432" y="288" width="32" height="32"/>
+  <object id="5" name="Player" type="Player" x="432" y="240" width="32" height="32"/>
   <object id="6" x="361" y="453.5" width="1" height="0.5"/>
  </objectgroup>
  <objectgroup id="3" name="Collisions">
